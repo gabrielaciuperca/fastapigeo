@@ -31,7 +31,7 @@ L'API fournit plusieurs endpoints :
   ```powershell
   Invoke-RestMethod -Method Post -Uri "http://localhost:8000/communes" -ContentType "application/json" -Body '{"code_postal": "75001", "nom_commune": "Paris", "departement": "75"}'
 
-Dockerisation
+## Dockerisation
 
 Le projet est dockerisé avec deux services principaux :
 
@@ -44,13 +44,13 @@ bash
 
 docker-compose up
 
-Notes Supplémentaires
+## Notes Supplémentaires
 
     L'API a été testée localement et via Docker.
     Utilisez SQLiteBrowser pour inspecter la base de données.
     Un script creation_bdd.py séparé est utilisé pour le processus ETL.
 
-Conclusion
+## Conclusion
 
 Ce projet offre une approche simple et efficace pour gérer les informations des communes, en utilisant FastAPI, Docker, et Pelias pour le géocodage.
 
