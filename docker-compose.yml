@@ -1,0 +1,27 @@
+version: '3.10'
+services:
+  fastapi:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/app
+      - sqlite_data:/app/db
+
+  pelias:
+    image: pelias/api
+    depends_on:
+      - elasticsearch
+    ports:
+      - "4000:4000"
+
+  elasticsearch:
+    image: pelias/elasticsearch:7.5.1
+    environment:
+      - "discovery.type=single-node"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+volumes:
+  sqlite_data:
+  esdata:
