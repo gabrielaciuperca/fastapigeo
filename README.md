@@ -40,9 +40,8 @@ Le projet est dockerisé avec deux services principaux :
 
 Pour démarrer les services, utilisez :
 
-bash
-
-docker-compose up
+    bash
+    docker-compose up
 
 ## Notes Supplémentaires
 
